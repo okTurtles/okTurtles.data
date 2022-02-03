@@ -1,6 +1,6 @@
 # `okTurtles.data`
 
-Creates a key-value based in-memory datastore.
+Creates an in-memory key-value datastore for [SBP](https://github.com/okTurtles/sbp-js).
 
 Offers basic set/get/delete actions, and a more interesting `/apply` selector that can be used where normally an instance from OOP would be used.
 

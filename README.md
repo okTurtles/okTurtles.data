@@ -9,13 +9,13 @@ See [`index.test.js`](index.test.js) for usage examples.
 Install:
 
 ```
-$ npm install --save @sbp/okTurtles.data
+$ npm install --save @sbp/okturtles.data
 ```
 
 Usage:
 
 ```js
-import '@sbp/okTurtles.data'
+import '@sbp/okturtles.data'
 ```
 
 Registers the following selectors. Self-explanatory except for `/apply`:

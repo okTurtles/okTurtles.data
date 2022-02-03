@@ -1,5 +1,5 @@
 {
-  "name": "@sbp/okTurtles.data",
+  "name": "@sbp/okturtles.data",
   "version": "0.0.1",
   "description": "Provides a useful in-memory datastore for SBP.",
   "main": "dist/main.cjs",

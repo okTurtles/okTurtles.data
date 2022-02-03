@@ -3,9 +3,8 @@
 import should from 'should'
 import sinon from 'sinon'
 import sbp from 'sbp-js'
-import './index.js'
-
-require('should-sinon')
+import 'should-sinon'
+import './dist/module.mjs'
 
 describe('[SBP] DATA domain', () => {
   it('should store simple value', () => {

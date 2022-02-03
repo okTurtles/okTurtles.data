@@ -7,13 +7,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _sbpJs = _interopRequireDefault(require("sbp-js"));
+var _sbp = _interopRequireDefault(require("@sbp/sbp"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _store = new Map();
 
-var _default = (0, _sbpJs.default)('sbp/selectors/register', {
+var _default = (0, _sbp.default)('sbp/selectors/register', {
   'okTurtles.data/get': function okTurtlesDataGet(key) {
     return _store.get(key);
   },

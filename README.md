@@ -15,7 +15,11 @@ $ npm install --save @sbp/okturtles.data
 Usage:
 
 ```js
+import sbp from '@sbp/sbp'
 import '@sbp/okturtles.data'
+
+// now you can use any of the okTurtles.data selectors
+// note: you only need to import '@sbp/okturtles.data' once!
 ```
 
 Registers the following selectors. Self-explanatory except for `/apply`:

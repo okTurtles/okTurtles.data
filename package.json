@@ -1,7 +1,7 @@
 {
   "name": "@sbp/okturtles.data",
   "version": "0.0.2",
-  "description": "Provides a useful in-memory datastore for SBP.",
+  "description": "Provides a useful in-memory datastore for SBP",
   "main": "dist/main.cjs",
   "type": "module",
   "exports": {

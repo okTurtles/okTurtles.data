@@ -1,6 +1,6 @@
 {
   "name": "@sbp/okturtles.data",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Provides a useful in-memory datastore for SBP",
   "main": "dist/main.cjs",
   "type": "module",
@@ -42,7 +42,6 @@
     "@babel/preset-env": "7.16.11",
     "@babel/preset-flow": "7.16.7",
     "@babel/register": "7.17.0",
-    "@sbp/sbp": "0.0.1",
     "eslint-config-standard": "17.0.0-0",
     "eslint-plugin-flowtype": "8.0.3",
     "flow-bin": "0.170.0",
@@ -51,5 +50,8 @@
     "should": "13.2.3",
     "should-sinon": "0.0.6",
     "sinon": "13.0.1"
+  },
+  "dependencies": {
+    "@sbp/sbp": "1.1.0"
   }
 }

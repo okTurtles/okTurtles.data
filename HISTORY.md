@@ -1,5 +1,9 @@
 # History
 
+#### 0.1.6
+
+- TypeScript support
+
 #### 0.1.5
 
 - SBP listed as a peer dependency

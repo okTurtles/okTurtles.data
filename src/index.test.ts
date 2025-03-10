@@ -1,47 +1,45 @@
-/* eslint-env mocha */
-
-import should from 'should'
-import sinon from 'sinon'
 import sbp from '@sbp/sbp'
-import 'should-sinon'
-import './dist/module.mjs'
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
+import './index.js'
 
 describe('[SBP] DATA domain', () => {
   it('should store simple value', () => {
     sbp('okTurtles.data/set', 'test', 1)
-    should(sbp('okTurtles.data/get', 'test')).equal(1)
+    assert.equal(sbp('okTurtles.data/get', 'test'), 1)
   })
 
   it('should reset value', () => {
     sbp('okTurtles.data/set', 'reset', 1)
     sbp('okTurtles.data/set', 'reset', 2)
-    should(sbp('okTurtles.data/get', 'reset')).equal(2)
+    assert.equal(sbp('okTurtles.data/get', 'reset'), 2)
   })
 
   it('should add item to collection', () => {
     sbp('okTurtles.data/add', 'testCollection', 1)
     sbp('okTurtles.data/add', 'testCollection', 2)
-    should(sbp('okTurtles.data/get', 'testCollection')).deepEqual([1, 2])
+    assert.deepEqual(sbp('okTurtles.data/get', 'testCollection'), [1, 2])
   })
 
   it('should return undefined for unset path', () => {
-    should(sbp('okTurtles.data/get', 'testNothing')).deepEqual(undefined)
+    assert.equal(sbp('okTurtles.data/get', 'testNothing'), undefined)
     sbp('okTurtles.data/delete', 'testCollection')
-    should(sbp('okTurtles.data/get', 'testCollection')).deepEqual(undefined)
+    assert.equal(sbp('okTurtles.data/get', 'testCollection'), undefined)
   })
 
-  it('should add and remove fn from collection', () => {
-    const testFn = sinon.spy()
+  it('should add and remove fn from collection', (t) => {
+    const testFn = t.mock.fn()
     sbp('okTurtles.data/add', 'fnTestCollection', 1)
     sbp('okTurtles.data/add', 'fnTestCollection', testFn)
+    assert.equal(testFn.mock.callCount(), 0)
     sbp('okTurtles.data/get', 'fnTestCollection')[1]()
-    testFn.should.be.called()
+    assert.equal(testFn.mock.callCount(), 1)
     sbp('okTurtles.data/remove', 'fnTestCollection', testFn)
-    should(sbp('okTurtles.data/get', 'fnTestCollection').length).equal(1)
+    assert.deepEqual(sbp('okTurtles.data/get', 'fnTestCollection'), [1])
   })
 
   it('should apply String fn to key "test"', () => {
-    should(sbp('okTurtles.data/apply', 'test', String)).type('string')
-    should(sbp('okTurtles.data/apply', 'test', String)).equal('1')
+    assert.equal(typeof sbp('okTurtles.data/apply', 'test', String), 'string')
+    assert.equal(sbp('okTurtles.data/apply', 'test', String), '1')
   })
 })

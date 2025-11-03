@@ -1,5 +1,9 @@
 # History
 
+#### 0.1.7
+
+- Ability to count and iterate over keys
+
 #### 0.1.6
 
 - TypeScript support

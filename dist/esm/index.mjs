@@ -32,6 +32,12 @@ export default sbp('sbp/selectors/register', {
             return aLen - filtered.length;
         }
     },
+    'okTurtles.data/iterKeys': function* () {
+        yield* _store.keys();
+    },
+    'okTurtles.data/keyCount': function () {
+        return _store.size;
+    },
     'okTurtles.data/apply': function (key, fn) {
         return fn(_store.get(key));
     }

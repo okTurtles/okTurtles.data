@@ -1,6 +1,6 @@
 {
   "name": "@sbp/okturtles.data",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Provides a useful in-memory datastore for SBP",
   "types": "dist/umd/index.d.cts",
   "main": "dist/umd/index.cjs",

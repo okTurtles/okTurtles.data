@@ -42,4 +42,16 @@ describe('[SBP] DATA domain', () => {
     assert.equal(typeof sbp('okTurtles.data/apply', 'test', String), 'string')
     assert.equal(sbp('okTurtles.data/apply', 'test', String), '1')
   })
+
+  it('should return the correct count', () => {
+    assert.equal(sbp('okTurtles.data/keyCount'), 3)
+  })
+
+  it('should iterate over keys', () => {
+    const iterator = sbp('okTurtles.data/iterKeys')
+    assert.deepEqual(iterator.next(), { done: false, value: 'test' })
+    assert.deepEqual(iterator.next(), { done: false, value: 'reset' })
+    assert.deepEqual(iterator.next(), { done: false, value: 'fnTestCollection' })
+    assert.deepEqual(iterator.next(), { done: true, value: undefined })
+  })
 })

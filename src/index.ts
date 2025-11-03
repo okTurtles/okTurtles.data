@@ -34,6 +34,12 @@ export default sbp('sbp/selectors/register', {
       return aLen - filtered.length
     }
   },
+  'okTurtles.data/iterKeys': function * (): IterableIterator<string> {
+    yield * _store.keys()
+  },
+  'okTurtles.data/keyCount': function (): number {
+    return _store.size
+  },
   'okTurtles.data/apply': function (key: unknown, fn: (arg: unknown) => unknown) {
     return fn(_store.get(key))
   }

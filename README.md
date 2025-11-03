@@ -30,6 +30,8 @@ Registers the following selectors. Self-explanatory except for `/apply`:
 - `'okTurtles.data/add'`
 - `'okTurtles.data/remove'`
 - `'okTurtles.data/apply'` - applies a function to the value of a given key.
+- `'okTurtles.data/iterKeys'`
+- `'okTurtles.data/keyCount'`
 
 ## History
 

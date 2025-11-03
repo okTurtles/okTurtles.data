@@ -4,7 +4,7 @@ Creates an in-memory key-value datastore for [SBP](https://github.com/okTurtles/
 
 Offers basic set/get/delete actions, and a more interesting `/apply` selector that can be used where normally an instance from OOP would be used.
 
-See [`index.test.js`](index.test.js) for usage examples.
+See [`index.test.ts`](src/index.test.ts) for usage examples.
 
 Install:
 
